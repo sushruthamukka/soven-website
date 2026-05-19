@@ -1,0 +1,83 @@
+{
+  "hero_eyebrow": "Established 1992 · Hyderabad",
+  "hero_title": "Navigating Regulations. Building Futures.",
+  "hero_subtitle": "Soven Liaisoning Services is a team of seasoned professionals bridging entrepreneurs, investors, and corporations with Government & Regulatory authorities across Telangana & Andhra Pradesh.",
+  "about_title": "A Result-Oriented Organisation",
+  "about_p1": "Soven Liaisoning Services was incorporated in 1992 and is currently based in Hyderabad. We have been associated with many multi-nationals for the successful completion of their projects in Telangana & Andhra Pradesh.",
+  "about_p2": "Before the liberalization of Government Policies, there was a great scarcity of experienced professionals with immense knowledge about local Regulatory & Statutory Rules. This led many Multi-national Organizations to step back or face delays in approvals — affecting their profitability and business opportunity.",
+  "about_quote": "Taking advantage of Government policies requires not just knowledge, but the ability to leave a positive impression on government stakeholders. Only Seasoned and Intelligent Professionals can render these services.",
+  "clients": [
+    { "name": "Amazon", "category": "multinational" },
+    { "name": "Cushman & Wakefield", "category": "multinational" },
+    { "name": "Dr. Reddy's Laboratories", "category": "multinational" },
+    { "name": "Hyundai India", "category": "multinational" },
+    { "name": "IKEA India", "category": "multinational" },
+    { "name": "Johnson & Johnson", "category": "multinational" },
+    { "name": "Knight Frank", "category": "multinational" },
+    { "name": "McDonalds", "category": "multinational" },
+    { "name": "Shell", "category": "multinational" },
+    { "name": "Wal-Mart", "category": "multinational" },
+    { "name": "Godrej Properties", "category": "realty" },
+    { "name": "Hiranandani Group", "category": "realty" },
+    { "name": "ITC Ltd", "category": "realty" },
+    { "name": "Lodha Group", "category": "realty" },
+    { "name": "L&T Constructions", "category": "realty" },
+    { "name": "Mahindra Life Spaces", "category": "realty" },
+    { "name": "ONGC", "category": "realty" },
+    { "name": "Prestige Group", "category": "realty" },
+    { "name": "Tata Group (Rallis India)", "category": "realty" },
+    { "name": "Wipro IT Services", "category": "realty" },
+    { "name": "Prestige Forum Mall", "category": "mall" },
+    { "name": "Sarath's City Capital", "category": "mall" },
+    { "name": "Asian Cinemas", "category": "mall" },
+    { "name": "Skill Promoters IT Mall", "category": "mall" },
+    { "name": "Hafeez Contractor", "category": "architect" },
+    { "name": "CRN Architects", "category": "architect" },
+    { "name": "Edifice Architects", "category": "architect" },
+    { "name": "RSP India", "category": "architect" }
+  ],
+  "projects": [
+    {
+      "tag": "Residential",
+      "title": "Apex Meadows",
+      "description": "Regulatory clearances and land conversion approvals for a premium upscale residential villas township in Kokapet, Hyderabad.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Upscale_Villas_at_Kokapet_in_Hyderabad.jpg/960px-Upscale_Villas_at_Kokapet_in_Hyderabad.jpg"
+    },
+    {
+      "tag": "Retail & Entertainment",
+      "title": "Asian Cinemas",
+      "description": "Liaisoning and fire disaster approvals for modern multiplex screens and retail zones in Hyderabad.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/53/Imax_theater_hyderabad.jpg"
+    },
+    {
+      "tag": "Education",
+      "title": "BITS Pilani Hyderabad Campus",
+      "description": "End-to-end liaison services for BITS Pilani campus development, including environmental clearances and building permits.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/BITS%2C_Pilani_%E2%80%93_Hyderabad_Campus.jpg/960px-BITS%2C_Pilani_%E2%80%93_Hyderabad_Campus.jpg"
+    },
+    {
+      "tag": "Hospitality",
+      "title": "Sandhya Hotels",
+      "description": "Statutory approvals, building plans scrutiny, and occupancy certificate for a premium luxury hotel property in Gachibowli.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Hyatt_hotel_Hyderabad-illuminated_at_Gachibowli_03.jpg/960px-Hyatt_hotel_Hyderabad-illuminated_at_Gachibowli_03.jpg"
+    },
+    {
+      "tag": "Commercial & Retail",
+      "title": "Sarath City Capital Mall",
+      "description": "Complete GHMC and HMDA development clearances for Hyderabad's landmark 8-storey shopping mall.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Sarath_city_capital_mall_hyderabad.jpg/960px-Sarath_city_capital_mall_hyderabad.jpg"
+    },
+    {
+      "tag": "Commercial & IT",
+      "title": "Skill Promoters (IT Office & Mall)",
+      "description": "Clearances and statutory coordination for a futuristic IT office tower and shopping cum multiplex development.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Hitec_City_%2815713%29.jpg/960px-Hitec_City_%2815713%29.jpg"
+    },
+    {
+      "tag": "Commercial & IT",
+      "title": "Wipro IT Services",
+      "description": "Industrial clearances, power supply sanctions, and PCB operating consents for Wipro IT Development centers.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/S3_and_S4_Building_SJP2_Wipro_Sarjapur_office_Photo_182805.jpg/960px-S3_and_S4_Building_SJP2_Wipro_Sarjapur_office_Photo_182805.jpg"
+    }
+  ]
+}

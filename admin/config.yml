@@ -1,0 +1,89 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "settings"
+    label: "Site Content"
+    files:
+
+      - name: "content"
+        label: "Home Page"
+        file: "_data/content.json"
+        format: json
+        fields:
+
+          # Hero
+          - label: "Hero Eyebrow Text"
+            name: "hero_eyebrow"
+            widget: "string"
+            hint: "Small text above the main heading e.g. Established 1992 · Hyderabad"
+
+          - label: "Hero Main Title"
+            name: "hero_title"
+            widget: "string"
+            hint: "Use a period to split into two parts. Second part becomes italic."
+
+          - label: "Hero Subtitle"
+            name: "hero_subtitle"
+            widget: "text"
+
+          # About
+          - label: "About Title"
+            name: "about_title"
+            widget: "string"
+
+          - label: "About Paragraph 1"
+            name: "about_p1"
+            widget: "text"
+
+          - label: "About Paragraph 2"
+            name: "about_p2"
+            widget: "text"
+
+          - label: "About Quote"
+            name: "about_quote"
+            widget: "text"
+
+          # Clients
+          - label: "Clients"
+            name: "clients"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - label: "Client Name"
+                name: "name"
+                widget: "string"
+              - label: "Category"
+                name: "category"
+                widget: "select"
+                options:
+                  - { label: "Multinational", value: "multinational" }
+                  - { label: "Realty & Developer", value: "realty" }
+                  - { label: "Mall & Multiplex", value: "mall" }
+                  - { label: "Architect", value: "architect" }
+              - label: "Logo Image (optional)"
+                name: "logo"
+                widget: "image"
+                required: false
+                hint: "Upload client logo. If not provided, client name will be shown as text."
+
+          # Projects
+          - label: "Projects (Carousel)"
+            name: "projects"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - label: "Project Tag"
+                name: "tag"
+                widget: "string"
+                hint: "e.g. Residential, Commercial, Industrial"
+              - label: "Project Title"
+                name: "title"
+                widget: "string"
+              - label: "Project Description"
+                name: "description"
+                widget: "text"
