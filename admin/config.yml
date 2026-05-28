@@ -20,7 +20,7 @@ collections:
           - label: "Hero Eyebrow Text"
             name: "hero_eyebrow"
             widget: "string"
-            hint: "Small text above the main heading e.g. Established 1992 · Hyderabad"
+            hint: "Small text above the main heading e.g. Established 1998 · Hyderabad"
 
           - label: "Hero Main Title"
             name: "hero_title"

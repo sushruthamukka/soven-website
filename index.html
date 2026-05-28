@@ -76,6 +76,17 @@
     nav.scrolled .nav-logo img {
       filter: drop-shadow(0 1px 4px rgba(0,0,0,0.15));
     }
+    .nav-logo-text {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--gold);
+      letter-spacing: -0.02em;
+      transition: color 0.4s;
+    }
+    nav.scrolled .nav-logo-text {
+      color: var(--navy);
+    }
     .nav-links {
       display: flex;
       gap: 2.5rem;
@@ -187,7 +198,7 @@
       font-size: clamp(2.2rem, 4.2vw, 3.8rem);
       font-weight: 800;
       line-height: 1.1;
-      color: var(--white);
+      color: var(--gold);
       margin-bottom: 1.5rem;
       letter-spacing: -0.02em;
     }
@@ -399,10 +410,9 @@
       color: rgba(255,255,255,0.5);
       line-height: 1.6;
     }
-
     /* ── WHAT WE DO ── */
     #services {
-      background: var(--white);
+      background: var(--cream);
     }
     .services-intro {
       max-width: 600px;
@@ -412,6 +422,56 @@
       font-size: 1rem;
       line-height: 1.9;
       color: var(--text-muted);
+    }
+    .services-list-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    #services .service-card {
+      background: var(--white);
+      border: 1px solid var(--gray-light);
+      border-radius: 12px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 4px 20px rgba(13, 42, 78, 0.02);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      height: 100%;
+      box-sizing: border-box;
+    }
+    #services .service-card::after {
+      display: none;
+    }
+    #services .service-card:hover {
+      background: var(--white);
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(13, 42, 78, 0.08);
+      border-color: rgba(13, 42, 78, 0.15);
+    }
+    #services .service-icon {
+      font-size: 1.6rem;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(13, 42, 78, 0.04);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+    #services .service-card:hover .service-icon {
+      background: rgba(255, 199, 44, 0.2);
+      transform: scale(1.1);
+    }
+    #services .service-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 0;
+      line-height: 1.4;
     }
     .services-grid {
       display: grid;
@@ -788,17 +848,17 @@
       transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .project-card {
-      min-width: calc(33.333% - 1rem);
+      width: calc(33.333% - 1rem);
+      flex: 0 0 calc(33.333% - 1rem);
       background: var(--white);
       border: 1px solid var(--gray-light);
-      flex-shrink: 0;
       position: relative;
       overflow: hidden;
       display: flex;
       flex-direction: column;
     }
     .project-img-wrapper {
-      height: 180px;
+      height: 240px;
       overflow: hidden;
       background: var(--cream);
       position: relative;
@@ -872,6 +932,49 @@
       border-color: var(--navy);
     }
 
+    /* ── INDUSTRIES WE SERVE ── */
+    #industries {
+      background: var(--white);
+    }
+    .industry-card {
+      background: var(--cream);
+      border: 1px solid var(--gray-light);
+      border-radius: 12px;
+      padding: 2.5rem;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .industry-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(13, 42, 78, 0.05);
+      border-color: var(--gold);
+    }
+    .industry-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 1.5rem;
+    }
+    .industry-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .industry-card li {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      position: relative;
+      padding-left: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    .industry-card li::before {
+      content: '•';
+      color: var(--gold);
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+
     /* ── WHY US ── */
     #why {
       background: var(--white);
@@ -929,7 +1032,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 6rem;
-      margin-top: 4rem;
+      margin-top: 1.5rem;
     }
     .contact-info p {
       font-size: 1rem;
@@ -952,6 +1055,14 @@
       font-size: 0.9rem;
       color: rgba(255,255,255,0.7);
       line-height: 1.7;
+    }
+    .contact-item-text a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .contact-item-text a:hover {
+      color: var(--gold);
     }
     .contact-item-text strong {
       display: block;
@@ -1045,7 +1156,10 @@
       .hero-stats { display: none; }
       .hero-content { padding: 0 5%; }
       .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
-      .project-card { min-width: calc(80% - 1rem); }
+      .project-card {
+        width: calc(50% - 0.75rem);
+        flex: 0 0 calc(50% - 0.75rem);
+      }
       footer { flex-direction: column; gap: 1rem; text-align: center; }
       #departments { padding: 5rem 5%; }
       .map-tabs-container {
@@ -1054,6 +1168,13 @@
       }
       .tabs-buttons {
         grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .project-card {
+        width: 100%;
+        flex: 0 0 100%;
       }
     }
   </style>
@@ -1065,7 +1186,7 @@
   <!-- NAV -->
   <nav id="navbar">
     <a href="#" class="nav-logo" aria-label="Soven Liaisoning Services">
-      <img src="images/soven_logo.png" alt="Soven Liaisoning Services Logo" />
+      <span class="nav-logo-text">Soven Liaisoning</span>
     </a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
@@ -1089,13 +1210,14 @@
     <div class="hero-accent-line"></div>
     <div class="hero-content">
       <div class="hero-eyebrow">
-        <span id="hero-eyebrow">Established 1992 · Hyderabad</span>
+        <span id="hero-eyebrow">Established 1998 · Hyderabad</span>
       </div>
       <h1 class="hero-title" id="hero-title">
-        Navigating Regulations. <em>Building Futures.</em>
+        Soven <em>Liaisoning</em>
       </h1>
+      <p style="font-size: 1.2rem; color: var(--gold-light); font-family: 'Outfit', sans-serif; margin-bottom: 1rem; font-weight: 600;">Where Regulatory Complexity meets Clarity</p>
       <p class="hero-subtitle" id="hero-subtitle">
-        Soven Liaisoning Services is a team of seasoned professionals bridging entrepreneurs, investors, and corporations with Government & Regulatory authorities across Telangana & Andhra Pradesh.
+        Soven Liaisoning Services bridges entrepreneurs, investors, and corporations with Government & Regulatory authorities across Telangana and Andhra Pradesh, offering end-to-end support for real estate, project facilitation, approvals, and strategic business growth with professionalism and integrity.
       </p>
       <div class="hero-actions">
         <a href="#services" class="btn-primary">Our Services</a>
@@ -1126,85 +1248,182 @@
   <section id="about">
     <div class="about-text" data-aos="fade-up">
       <div class="section-eyebrow"><span>Who We Are</span></div>
-      <h2 class="section-title" id="about-title">A Result-Oriented <em>Organisation</em></h2>
-      <p id="about-p1">Soven Liaisoning Services was incorporated in 1992 and is currently based in Hyderabad. We have been associated with many multi-nationals for the successful completion of their projects in Telangana &amp; Andhra Pradesh.</p>
-      <p id="about-p2">Before the liberalization of Government Policies, there was a great scarcity of experienced professionals with immense knowledge about local Regulatory &amp; Statutory Rules. This led many Multi-national Organizations to step back or face delays in approvals — affecting their profitability and business opportunity.</p>
+      <h2 class="section-title" id="about-title">About <em>Soven Liaison</em></h2>
+      <p id="about-p1">Founded by M.Venkat in 1998 Soven Liaison is a professionally driven consultancy firm specializing in liaisoning services, real estate advisory, land coordination, project facilitation, and strategic business support across Telangana and Andhra Pradesh.</p>
+      <p id="about-p2">Built on decades of industry experience, we help developers, investors, businesses, and individual clients navigate complex regulatory and operational processes with clarity, efficiency, and professionalism. From land-related coordination and documentation to project facilitation and strategic business support, we are known for delivering reliable, transparent, and result-oriented solutions.</p>
       <div class="about-highlight">
-        <p id="about-quote">"Taking advantage of Government policies requires not just knowledge, but the ability to leave a positive impression on government stakeholders. Only Seasoned and Intelligent Professionals can render these services."</p>
+        <p id="about-quote">"At Soven Liaison, trust, integrity, and long-term relationships remain at the core of everything we do — enabling us to consistently support successful ventures through dependable guidance and seamless execution."</p>
       </div>
     </div>
     <div class="about-visual" data-aos="fade-left">
       <div class="about-card">
-        <div class="about-card-title">Our Core Pillars</div>
-        <div class="pillar">
+        <div class="about-card-title">Our Core Values</div>
+        <div class="pillar" style="margin-bottom: 1.2rem;">
           <div class="pillar-num">01</div>
           <div class="pillar-text">
-            <h4>Result-Oriented</h4>
-            <p>Completion of time-bound projects earns us the name of a truly result-driven organisation.</p>
+            <h4>Integrity & Transparency</h4>
           </div>
         </div>
-        <div class="pillar">
+        <div class="pillar" style="margin-bottom: 1.2rem;">
           <div class="pillar-num">02</div>
           <div class="pillar-text">
-            <h4>Experienced Professionals</h4>
-            <p>Decades of exposure to local Regulatory, Statutory, and Development bodies.</p>
+            <h4>Professional Excellence</h4>
           </div>
         </div>
-        <div class="pillar">
+        <div class="pillar" style="margin-bottom: 1.2rem;">
           <div class="pillar-num">03</div>
           <div class="pillar-text">
-            <h4>Trusted Relationships</h4>
-            <p>Maintaining professional relations with Government Offices, their resources and management.</p>
+            <h4>Client-Focused Approach</h4>
           </div>
         </div>
-        <div class="pillar">
+        <div class="pillar" style="margin-bottom: 1.2rem;">
           <div class="pillar-num">04</div>
           <div class="pillar-text">
-            <h4>100% Commitment</h4>
-            <p>We believe in delivering high quality services and regulatory clearances on time, every time.</p>
+            <h4>Reliable Execution</h4>
+          </div>
+        </div>
+        <div class="pillar" style="margin-bottom: 1.2rem;">
+          <div class="pillar-num">05</div>
+          <div class="pillar-text">
+            <h4>Long-Term Relationships</h4>
+          </div>
+        </div>
+        <div class="pillar" style="margin-bottom: 1.2rem;">
+          <div class="pillar-num">06</div>
+          <div class="pillar-text">
+            <h4>Commitment to Quality</h4>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- OUR MISSION -->
+  <section id="mission" style="background: var(--white);">
+    <div class="services-intro" data-aos="fade-up" style="max-width: 800px; margin-bottom: 4rem;">
+      <div class="section-eyebrow"><span>Our Mission</span></div>
+      <h2 class="section-title">What Drives <em>Us</em></h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card" data-aos="fade-right" data-aos-delay="100">
+        <span class="service-icon">✨</span>
+        <p style="font-size: 1rem; color: var(--navy); font-weight: 500;">To provide professional and reliable liaisoning services with complete transparency and efficiency.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="150">
+        <span class="service-icon">🧭</span>
+        <p style="font-size: 1rem; color: var(--navy); font-weight: 500;">To deliver strategic guidance and practical solutions tailored to client requirements.</p>
+      </div>
+      <div class="service-card" data-aos="fade-left" data-aos-delay="200">
+        <span class="service-icon">🤝</span>
+        <p style="font-size: 1rem; color: var(--navy); font-weight: 500;">To build long-term relationships through trust, commitment, and consistent performance.</p>
+      </div>
+      <div class="service-card" data-aos="fade-right" data-aos-delay="250">
+        <span class="service-icon">⚡</span>
+        <p style="font-size: 1rem; color: var(--navy); font-weight: 500;">To simplify complex processes and ensure seamless coordination at every stage.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+        <span class="service-icon">📈</span>
+        <p style="font-size: 1rem; color: var(--navy); font-weight: 500;">To create value-driven opportunities for businesses, developers, investors, and individuals.</p>
+      </div>
+      <div class="service-card" data-aos="fade-left" data-aos-delay="350">
+        <span class="service-icon">⭐</span>
+        <p style="font-size: 1rem; color: var(--navy); font-weight: 500;">To uphold the highest standards of professionalism, ethics, and service excellence.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE DO -->
   <!-- WHAT WE DO -->
   <section id="services">
     <div class="services-intro" data-aos="fade-up">
       <div class="section-eyebrow"><span>What We Do</span></div>
-      <h2 class="section-title">Comprehensive <em>Liaisoning</em> Solutions</h2>
-      <p>SLS comprises experienced professionals in Urban Planning, Building Services, Environment and Regulatory Approvals. We serve Townships, Malls, Residential Towers, Hospitals, Industries, Pharma Projects, SEZs, IT Buildings and more.</p>
+      <h2 class="section-title">Regulatory Approvals & <em>Liaisoning Services</em></h2>
+      <p>End-to-end coordination, approvals, compliance, and government liaisoning for industrial, commercial, infrastructure, and real estate projects.</p>
     </div>
-    <div class="services-grid">
-      <div class="service-card" data-aos="fade-right" data-aos-delay="100">
-        <span class="service-icon">🏗️</span>
-        <h3>Pre-Construction & Development</h3>
-        <p>Conversion of property to developmental status within zoning regulations. Change of land use from GHMC, HMDA, DTCP, IALA, MA &amp; UD and other statutory authorities.</p>
+    <div class="services-list-grid">
+      <div class="service-card" data-aos="fade-up">
+        <span class="service-icon">⚙️</span>
+        <h3>Technical Coordination</h3>
       </div>
-      <div class="service-card" data-aos="fade-left" data-aos-delay="200">
+      <div class="service-card" data-aos="fade-up" data-aos-delay="50">
+        <span class="service-icon">📄</span>
+        <h3>Documentation & Application Preparation</h3>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
         <span class="service-icon">📋</span>
-        <h3>For Construction & Development</h3>
-        <p>Liaison between Proponents and Statutory Bodies. Coordination with Architects, scrutiny of drawings, preparing technical applications, arranging NOCs and Regulatory Clearances.</p>
+        <h3>Statutory Compliance Management</h3>
       </div>
-      <div class="service-card" data-aos="fade-right" data-aos-delay="100">
+      <div class="service-card" data-aos="fade-up" data-aos-delay="150">
+        <span class="service-icon">🔥</span>
+        <h3>Fire Safety Compliance</h3>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+        <span class="service-icon">✅</span>
+        <h3>NOC Arrangements</h3>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="250">
+        <span class="service-icon">🏛️</span>
+        <h3>Coordination with Architects & Consultants</h3>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+        <span class="service-icon">🔍</span>
+        <h3>Regulatory Scrutiny Support</h3>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="350">
+        <span class="service-icon">🏗️</span>
+        <h3>Development Permissions</h3>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+        <span class="service-icon">📊</span>
+        <h3>Project Facilitation & Monitoring</h3>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="450">
         <span class="service-icon">🏢</span>
-        <h3>Post Construction</h3>
-        <p>Occupancy Certificates from Fire &amp; Emergency Services, Consent for Operation from Pollution Control Board, and certificates from all sanctioning authorities.</p>
+        <h3>TGIIC / APIIC Coordination</h3>
       </div>
-      <div class="service-card" data-aos="fade-left" data-aos-delay="200">
-        <span class="service-icon">⚖️</span>
-        <h3>Legal Liaison</h3>
-        <p>Address legal issues and liaise with concerned authorities. Maintain complete details on current regulatory practices for Entrepreneurs, Investors and Companies.</p>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES WE SERVE -->
+  <section id="industries">
+    <div data-aos="fade-up">
+      <div class="section-eyebrow"><span>Sectors We Cover</span></div>
+      <h2 class="section-title">Industries <em>We Serve</em></h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 4rem;">
+      <div class="industry-card" data-aos="fade-up">
+        <h3>Real Estate & Construction</h3>
+        <ul>
+          <li>Real Estate Developers</li>
+          <li>Residential & Township Developments</li>
+          <li>Commercial Complexes & Multiplexes</li>
+          <li>Infrastructure & Construction Projects</li>
+        </ul>
       </div>
-      <div class="service-card" data-aos="fade-right" data-aos-delay="100">
-        <span class="service-icon">🏭</span>
-        <h3>Industrial Approvals</h3>
-        <p>Factory Building Layout approvals, Factory Licenses, Director of Factories and Boilers compliance, periodic renewals and all routine industrial compliances.</p>
+      <div class="industry-card" data-aos="fade-up" data-aos-delay="100">
+        <h3>Industrial & Manufacturing</h3>
+        <ul>
+          <li>Manufacturing Industries</li>
+          <li>Industrial & Engineering Projects</li>
+          <li>SEZ & Industrial Parks</li>
+          <li>Warehousing & Logistics Projects</li>
+        </ul>
       </div>
-      <div class="service-card" data-aos="fade-left" data-aos-delay="200">
-        <span class="service-icon">🌐</span>
-        <h3>Strategic Support</h3>
-        <p>Strategic support in operating business and assisting in liaising with various government officials in clearing operational hindrances across Telangana &amp; AP.</p>
+      <div class="industry-card" data-aos="fade-up" data-aos-delay="200">
+        <h3>IT, Pharma & Healthcare</h3>
+        <ul>
+          <li>IT & Technology Parks</li>
+          <li>Pharma & Biotechnology Industries</li>
+          <li>Hospitals & Healthcare Institutions</li>
+        </ul>
+      </div>
+      <div class="industry-card" data-aos="fade-up" data-aos-delay="300">
+        <h3>Hospitality, Education & Retail</h3>
+        <ul>
+          <li>Hotels & Hospitality Projects</li>
+          <li>Educational Institutions</li>
+          <li>Retail & Commercial Malls</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -1289,39 +1508,55 @@
   <!-- WHY US -->
   <section id="why">
     <div class="why-text" data-aos="fade-right">
-      <div class="section-eyebrow"><span>Why Us</span></div>
+      <div class="section-eyebrow"><span>Why Choose Us</span></div>
       <h2 class="section-title">The Preferred <em>Choice</em></h2>
-      <p>Being among the leading service providers, we offer perfect liaisoning consultation to our valued clients. Our services are rendered keeping the interests of all involved parties in consideration.</p>
-      <p>Owing to our Reliability, Flexibility and Versatility, we are one of the most preferred choices.</p>
+      <p>At Soven Liaison, we are committed to delivering professional, transparent, and result-oriented solutions tailored to every client’s requirements. Our experience, strategic approach, and dedication to excellence make us a trusted partner for real estate, liaisoning, and project facilitation services.</p>
     </div>
     <div class="why-features" data-aos="fade-left">
       <div class="why-feature">
-        <div class="why-feature-icon">🎯</div>
-        <div>
-          <h4>Result-Driven Approach</h4>
-          <p>Every project handled with a 100% commitment to results. Time-bound delivery is our promise.</p>
-        </div>
-      </div>
-      <div class="why-feature">
         <div class="why-feature-icon">🤝</div>
         <div>
-          <h4>Deep Government Relations</h4>
-          <p>Decades of cultivated relationships with officers across 30+ government departments.</p>
-        </div>
-      </div>
-      <div class="why-feature">
-        <div class="why-feature-icon">⚡</div>
-        <div>
-          <h4>Cost-Effective Services</h4>
-          <p>Proven to be the most cost-effective service provider with a large base of satisfied clients.</p>
+          <h4 style="font-size: 1.1rem; margin-bottom: 0; margin-top: 0.3rem;">Deep Government Relations</h4>
         </div>
       </div>
       <div class="why-feature">
         <div class="why-feature-icon">🧠</div>
         <div>
-          <h4>Expert Knowledge</h4>
-          <p>Urban Planning, Building Services, Environment, and Regulatory Approvals — all under one roof.</p>
+          <h4 style="font-size: 1.1rem; margin-bottom: 0; margin-top: 0.3rem;">Expert Knowledge</h4>
         </div>
+      </div>
+      <div class="why-feature">
+        <div class="why-feature-icon">⚡</div>
+        <div>
+          <h4 style="font-size: 1.1rem; margin-bottom: 0; margin-top: 0.3rem;">Cost Effective Services</h4>
+        </div>
+      </div>
+      <div class="why-feature">
+        <div class="why-feature-icon">🎯</div>
+        <div>
+          <h4 style="font-size: 1.1rem; margin-bottom: 0; margin-top: 0.3rem;">Result-Driven Approach</h4>
+        </div>
+      </div>
+      <div class="why-feature">
+        <div class="why-feature-icon">✨</div>
+        <div>
+          <h4 style="font-size: 1.1rem; margin-bottom: 0; margin-top: 0.3rem;">Simplify complex processes</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDER'S MESSAGE -->
+  <section id="founder" style="background: var(--cream); padding: 8rem 10%;">
+    <div style="max-width: 800px; margin: 0 auto; text-align: center;" data-aos="fade-up">
+      <div class="section-eyebrow" style="justify-content: center;"><span>Founder's Message</span></div>
+      <h2 class="section-title">From the <em>Founder’s Desk</em></h2>
+      <div style="font-size: 1.1rem; line-height: 1.9; color: var(--text-muted); margin-top: 2rem; text-align: left;">
+        <p style="margin-bottom: 1.5rem;">I am Venkat M., Founder of Soven Liaison, with nearly 30 years of experience in liaisoning, real estate advisory, project coordination, and strategic business facilitation. Over the years, I have successfully handled numerous large-scale and complex projects across diverse sectors.</p>
+        <p style="margin-bottom: 1.5rem;">My professional journey has been built on strong industry knowledge, practical problem-solving, and a commitment to delivering reliable results with professionalism and integrity. Through years of working closely with regulatory authorities, developers, investors, and businesses, I have gained extensive expertise in approvals, land-related matters, and project facilitation.</p>
+        <p style="margin-bottom: 1.5rem;">At Soven Liaison, we believe in building long-term relationships based on trust, transparency, and commitment. Our focus is on simplifying complex processes and providing dependable strategic support that helps clients move forward with confidence.</p>
+        <p style="margin-bottom: 2rem;">I sincerely thank our clients, associates, and well-wishers for their continued trust and support, and we look forward to delivering excellence in every project we undertake.</p>
+        <p><strong>— Venkat M.</strong><br>Founder, Soven Liaison</p>
       </div>
     </div>
   </section>
@@ -1330,44 +1565,44 @@
   <section id="contact">
     <div data-aos="fade-up">
       <div class="section-eyebrow"><span>Get in Touch</span></div>
-      <h2 class="section-title">Let's <em>Work Together</em></h2>
+      <h2 class="section-title">Get In <em>Touch</em></h2>
     </div>
     <div class="contact-grid">
       <div class="contact-info" data-aos="fade-right">
-        <p>We are an interface between entrepreneurs and Government &amp; Regulatory Authorities — having solutions to all your challenges.</p>
+        <p>We welcome the opportunity to work with developers, investors, businesses, and individuals seeking dependable solutions and long-term partnerships.</p>
         <div class="contact-item">
           <div class="contact-item-icon">📍</div>
           <div class="contact-item-text">
             <strong>Address</strong>
-            Flat No. 104, Shiv Krupa Apartments,<br>Ameerpet, Hyderabad – 500 016
+            Ameerpet, Hyderabad- 500016
           </div>
         </div>
         <div class="contact-item">
           <div class="contact-item-icon">📞</div>
           <div class="contact-item-text">
-            <strong>Phone / Fax</strong>
-            040-23405488
+            <strong>Phone</strong>
+            <a href="tel:04023405488">040-23405488</a>
           </div>
         </div>
         <div class="contact-item">
           <div class="contact-item-icon">📱</div>
           <div class="contact-item-text">
             <strong>Mobile</strong>
-            +91 98490 50643 (M. Venkat)
+            <a href="tel:+919849050643">+91 98490 50643</a>
           </div>
         </div>
         <div class="contact-item">
           <div class="contact-item-icon">✉️</div>
           <div class="contact-item-text">
             <strong>Email</strong>
-            venkat@sovenliaison.in
+            <a href="mailto:venkathuda@sovenliaison.in">venkathuda@sovenliaison.in</a>
           </div>
         </div>
         <div class="contact-item">
           <div class="contact-item-icon">🌐</div>
           <div class="contact-item-text">
             <strong>Website</strong>
-            www.sovenliaison.in
+            <a href="http://www.sovenliaison.in" target="_blank">www.sovenliaison.in</a>
           </div>
         </div>
       </div>
@@ -1396,7 +1631,7 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-logo">
-      <img src="images/soven_logo.png" alt="Soven Liaisoning Services Logo" style="height:44px;width:44px;object-fit:contain;opacity:0.85;" />
+      <span style="font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--gold); letter-spacing: -0.02em;">Soven Liaisoning</span>
     </div>
     <div class="footer-tagline">Together we create value…</div>
     <div class="footer-copy">© 2026 Soven Liaisoning Services. All rights reserved.</div>
@@ -1485,40 +1720,35 @@
     // ── INTERACTIVE DEPARTMENTS MAP & TABS ──
     const deptCategories = {
       industrial: [
-        "TGIIC & APIIC — Industrial Infrastructure Corporation",
-        "Director of Boilers",
-        "Director of Factories",
-        "Commissioner of Industries / District Industries' Centre",
-        "Director of Industrial Health & Safety (Factory Inspector)",
-        "Labour Department — Contract Labour Act",
-        "Customs & Central Excise Commissioner"
+        "Factory Licenses & Industrial Registrations",
+        "Boiler Department Approvals",
+        "Labour Department Registrations & Compliance",
+        "DGFT & Industrial Approvals",
+        "Customs & Central Excise Coordination"
       ],
       infrastructure: [
-        "TG & AP CPDCL / SPDCL / EPDCL — Power Supply",
-        "AAI — Airport Authority of India",
-        "Department of Explosives — Nagpur, Chennai, Hyderabad",
-        "Controller of Explosives",
-        "Irrigation Department",
-        "SIA — Secretariat for Industrial Approvals, New Delhi",
-        "DGFT / JDGFT — Director General of Foreign Trade"
+        "Airport Authority of India (AAI) Approvals",
+        "Electricity Sanctions & Power Supply Coordination",
+        "Explosives Department Licenses & NOCs"
       ],
       municipal: [
-        "GHMC — Greater Hyderabad Municipal Corporation",
-        "HMDA — Hyderabad Metro Development Authority",
-        "Hyderabad Metropolitan Water Supply & Sewerage Board",
-        "Revenue Department, CCLA, Collector NOC, RDO, MRO",
-        "Municipal Administration & Urban Development (MA&UD)",
-        "District Collectorate / Revenue Department",
-        "DTCP — Directorate of Town & Country Planning",
-        "District Supply Officer"
+        "Water Supply & Sewerage Approvals",
+        "HMDA Approvals",
+        "GHMC Permissions & Sanctions",
+        "DTCP Permissions",
+        "Change of Land Use (Master Plan)",
+        "Revenue Department Coordination",
+        "Land Conversion Services (NALA) Revenue Dept.",
+        "Municipal Administration and Urban Development Coordination (MA&UD)",
+        "Grampanchayat & Municipal Approvals",
+        "Collector NOCs & Revenue Clearances",
+        "Survey & Land Documentation Coordination",
+        "Excise Department Permissions"
       ],
       special: [
-        "TG & AP Pollution Control Board (PCB)",
-        "TG & AP State Disaster Response & Fire Services",
-        "TG & AP Forest Service",
-        "EFEST — Energy, Forest, Environment, Science & Technology",
-        "DMHO — Director of Medical and Health Officer",
-        "Development Commissioner VSEZ / MOC / SEZ Authorities"
+        "Fire Department NOCs & Clearances",
+        "Pollution Control Board Approvals",
+        "Forest Department Clearances"
       ]
     };
 
@@ -1632,16 +1862,16 @@
     // ── CMS CONTENT ──
     let siteData = {};
 
-    fetch('/_data/content.json')
+    fetch('/_data/content.json?t=' + Date.now())
       .then(r => r.json())
       .then(data => { siteData = data; applyContent(data); })
       .catch(() => { applyContent(getDefaultData()); });
 
     function getDefaultData() {
       return {
-        hero_eyebrow: "Established 1992 · Hyderabad",
-        hero_title: "Navigating Regulations. Building Futures.",
-        hero_subtitle: "Soven Liaisoning Services is a team of seasoned professionals bridging entrepreneurs, investors, and corporations with Government & Regulatory authorities across Telangana & Andhra Pradesh.",
+        hero_eyebrow: "Established 1998 · Hyderabad",
+        hero_title: "Soven Liaisoning",
+        hero_subtitle: "Soven Liaisoning Services bridges entrepreneurs, investors, and corporations with Government & Regulatory authorities across Telangana and Andhra Pradesh, offering end-to-end support for real estate, project facilitation, approvals, and strategic business growth with professionalism and integrity.",
         about_title: "A Result-Oriented Organisation",
         projects: [
           {
@@ -1729,12 +1959,23 @@
       const track = document.getElementById('carouselTrack');
       const cards = track.querySelectorAll('.project-card');
       if (!cards.length) return;
-      const visible = window.innerWidth < 900 ? 1 : 3;
+      let visible = 3;
+      if (window.innerWidth < 768) {
+        visible = 1;
+      } else if (window.innerWidth < 1200) {
+        visible = 2;
+      }
       const max = Math.max(0, totalProjects - visible);
       carouselIndex = Math.max(0, Math.min(carouselIndex + dir, max));
       const cardWidth = cards[0].offsetWidth + 24;
       track.style.transform = `translateX(-${carouselIndex * cardWidth}px)`;
     }
+
+    window.addEventListener('resize', () => {
+      carouselIndex = 0;
+      const track = document.getElementById('carouselTrack');
+      if (track) track.style.transform = 'translateX(0)';
+    });
 
     // Netlify Identity redirect
     if (window.netlifyIdentity) {
