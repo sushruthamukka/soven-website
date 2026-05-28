@@ -307,22 +307,28 @@
     .section-eyebrow {
       display: flex;
       align-items: center;
-      gap: 1rem;
       margin-bottom: 1.2rem;
     }
     .section-eyebrow span {
       font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.2em;
+      font-weight: 600;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: #9c6c00; /* Mustard gold for excellent readability on light/cream backgrounds */
+      background: rgba(255, 199, 44, 0.08); /* 8% opacity gold background */
+      padding: 0.4rem 1rem;
+      border-radius: 4px; /* Premium box outline badge */
+      border: 1px solid rgba(255, 199, 44, 0.25); /* Subtle gold border */
+      display: inline-block;
     }
     .section-eyebrow::before {
-      content: '';
-      display: block;
-      width: 30px;
-      height: 1px;
-      background: var(--gold);
+      display: none; /* Hide the line in favor of the clean capsule badge */
+    }
+    #departments .section-eyebrow span,
+    #contact .section-eyebrow span {
+      color: var(--gold); /* Brighter gold for navy background contrast */
+      background: rgba(255, 199, 44, 0.12);
+      border-color: rgba(255, 199, 44, 0.35);
     }
     .section-title {
       font-size: clamp(2.2rem, 4vw, 3.5rem);
@@ -764,6 +770,14 @@
       height: 56px;
       max-width: 150px;
     }
+    .logo-item img[src*="Puravankara"] {
+      height: 68px;
+      max-width: 160px;
+    }
+    .logo-item img[src*="the-peninsula-group"] {
+      height: 68px;
+      max-width: 160px;
+    }
     .logo-item-name {
       font-size: 0.65rem;
       font-weight: 500;
@@ -774,6 +788,24 @@
       transition: color 0.3s;
     }
     .logo-item:hover .logo-item-name { color: var(--navy); }
+
+    .logo-text-placeholder {
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 750;
+      color: rgba(13, 42, 78, 0.55);
+      letter-spacing: -0.015em;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+    .logo-item:hover .logo-text-placeholder {
+      color: var(--navy-light);
+      transform: scale(1.04);
+    }
 
     /* ── COUNTER ANIMATION ── */
     .hero-stat-num {
@@ -1713,7 +1745,7 @@
       navbar.classList.toggle('scrolled', window.scrollY > 60);
     });
 
-    // ── TOP CLIENT LOGOS (real files) ──
+    // ── TOP CLIENT LOGOS ──
     const topClients = [
       { name: 'Amazon',            file: 'amazon.svg' },
       { name: 'IKEA',              file: 'ikea.svg' },
@@ -1725,9 +1757,24 @@
       { name: 'Godrej',            file: 'godrej_new.png' },
       { name: 'ONGC',              file: 'ongc.svg' },
       { name: 'Cushman & Wakefield', file: 'cushman.svg' },
+      { name: 'Dura-Line',         file: 'duraline.svg' },
+      { name: 'Tata Group',        file: 'tata.png' },
+      { name: 'Birla Group',       file: 'Aditya_Birla_Group_Logo.svg-removebg-preview.png' },
+      { name: 'Mahindra',          file: 'mahindra-mahindra-logo.png' },
+      { name: 'Microsoft',         file: 'microsoft-5.svg' },
+      // { name: 'Vijaya Holdings',   file: '' },
+      { name: 'Capitaland',        file: 'CapitaLand_Logo.png' },
+      { name: 'NPCI',              file: 'NPCI-Logo-removebg-preview.png' },
+      { name: 'EverStone Capital', file: 'everstone.png' },
+      { name: 'Prestige',          file: 'prestige.png' },
+      { name: 'Brigade',           file: 'Brigade_Group.svg.png' },
+      { name: 'Sobha',             file: 'sobha-realty-logo.png' },
+      { name: 'Purvankara',        file: 'puravankara.png' },
+      { name: 'Lodha',             file: 'lodha.png' },
+      { name: 'Peninsula',         file: 'peninsula.png' },
+      { name: 'Infosys',           file: 'infosys-technologies-logo.png' },
       { name: 'Jones Lang LaSalle', file: 'jll.svg' },
       { name: 'Alexandria',        file: 'alexandria.svg' },
-      { name: 'Dura-Line',         file: 'duraline.svg' },
     ];
 
     function buildMarquee() {
@@ -1736,7 +1783,11 @@
       const doubled = [...topClients, ...topClients];
       track.innerHTML = doubled.map(c => `
         <div class="logo-item">
-          <img src="images/clients/${c.file}" alt="${c.name}" />
+          ${c.file ? `
+            <img src="images/clients/${c.file}" alt="${c.name}" />
+          ` : `
+            <div class="logo-text-placeholder">${c.name}</div>
+          `}
           <span class="logo-item-name">${c.name}</span>
         </div>
       `).join('');
@@ -1878,7 +1929,7 @@
             tag: "Retail & Entertainment",
             title: "Asian Cinemas",
             description: "Liaisoning and fire disaster approvals for modern multiplex screens and retail zones in Hyderabad.",
-            image: "https://upload.wikimedia.org/wikipedia/commons/5/53/Imax_theater_hyderabad.jpg"
+            image: "images/projects/project-asian.jpg"
           },
           {
             tag: "Education",
